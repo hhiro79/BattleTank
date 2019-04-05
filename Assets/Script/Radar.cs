@@ -15,7 +15,6 @@ public class Radar : MonoBehaviour
             //「root」を使うと「親（最上位の親）」の情報を得ることができる
             //LookAt()メソッドは指定した方向にオブジェクトの向きを回転させる
             transform.root.LookAt(target);
-            Debug.Log(target);
         }
     }
 }
