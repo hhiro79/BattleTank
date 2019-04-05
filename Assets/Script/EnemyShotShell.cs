@@ -16,8 +16,6 @@ public class EnemyShotShell : MonoBehaviour
 
     void Start(){
         randomValue = Random.Range(minShotCount, maxShotCount);
-
-        Debug.Log(randomValue);
     }
 
     // Update is called once per frame
@@ -39,7 +37,6 @@ public class EnemyShotShell : MonoBehaviour
 
             shotInterval = 0;
             randomValue = Random.Range(minShotCount, maxShotCount);
-            Debug.Log(randomValue);
         }
     }
 }
