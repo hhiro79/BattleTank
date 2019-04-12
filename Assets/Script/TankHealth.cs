@@ -2,12 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TankHealth : MonoBehaviour
 {
+    public Camera tankCamera;
     public GameObject effectPrefab1;
     public GameObject effectPrefab2;
     public int tankHP;
+
+    public Text HPLabel;
+
+    void Start(){
+        HPLabel.text = tankHP.ToString();
+    }
 
     void OnTriggerEnter(Collider col){
 
@@ -16,6 +24,8 @@ public class TankHealth : MonoBehaviour
             
             //HPを1ずつ減少させる
             tankHP -= 1;
+
+            HPLabel.text = tankHP.ToString();
 
             //ぶつかってきた相手方(敵の砲弾)を破壊
             Destroy(col.gameObject);
@@ -33,6 +43,7 @@ public class TankHealth : MonoBehaviour
 
                 //プレーヤーを破壊せずに画面から見えなくする
                 //プレーヤーを破壊すると、その時点でメモリ上から消えるので、その後のコードが実行されなくなる。
+                tankCamera.enabled = false;
                 this.gameObject.SetActive(false);
 
                 //1.5秒後に「GoToGameOver()」メソッドを実行
