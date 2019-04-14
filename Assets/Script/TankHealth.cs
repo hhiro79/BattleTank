@@ -55,4 +55,14 @@ public class TankHealth : MonoBehaviour
     void GoToGameOver(){
         SceneManager.LoadScene("GameOver");
     }
+
+    public void AddHP(int amount){
+        tankHP += amount;
+
+        if(tankHP > 10){
+            tankHP = 10;
+        }
+
+        HPLabel.text = tankHP.ToString();
+    }
 }

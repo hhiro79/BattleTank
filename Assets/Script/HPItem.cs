@@ -2,21 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerupItem : MonoBehaviour
+public class HPItem : MonoBehaviour
 {
     public GameObject effectPrefab;
     public AudioClip getSound;
-    private ShotShell ss;
+    private TankHealth th;
+    private int reward = 3;
 
-    private void OnTriggerEnter(Collider col){
+    void OnTriggerEnter(Collider col){
         if(col.gameObject.tag == "Player"){
-            ss = GameObject.Find("ShotShell").GetComponent<ShotShell>();
-            ss.isPowerup = true;                 // Powerup状態にする
+
+            th = GameObject.Find ("Tank").GetComponent<TankHealth> ();
+
+            //AddHp()メソッドを呼び出して引数にrewardを与えている
+            th.AddHP(reward);
 
             Destroy(gameObject);
             GameObject effect = (GameObject)Instantiate(effectPrefab, transform.position, Quaternion.identity);
             Destroy(effect, 0.5f);
             AudioSource.PlayClipAtPoint(getSound, Camera.main.transform.position);
         }
-    }        
+    }
 }
