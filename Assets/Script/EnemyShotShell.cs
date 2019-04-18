@@ -31,7 +31,7 @@ public class EnemyShotShell : MonoBehaviour
             stopTimer = 0;
         }
 
-        print("攻撃開始まであと" + stopTimer + "秒");
+        //print("攻撃開始まであと" + stopTimer + "秒");
 
         // if(shotInterval % 60 == 0 && stopTimer <= 0){
         //     GameObject enemyShell = (GameObject)Instantiate(enemyShellPrefab, transform.position, Quaternion.identity);

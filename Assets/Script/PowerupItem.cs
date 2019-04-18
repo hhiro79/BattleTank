@@ -16,7 +16,7 @@ public class PowerupItem : MonoBehaviour
             Destroy(gameObject);
             GameObject effect = (GameObject)Instantiate(effectPrefab, transform.position, Quaternion.identity);
             Destroy(effect, 0.5f);
-            AudioSource.PlayClipAtPoint(getSound, Camera.main.transform.position);
+            AudioSource.PlayClipAtPoint(getSound, transform.position);
         }
     }        
 }

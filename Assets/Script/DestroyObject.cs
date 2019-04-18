@@ -18,6 +18,8 @@ public class DestroyObject : MonoBehaviour
     public int scoreValue;
     private ScoreManager sm;
 
+    private GameClear gc;
+
     void Start(){
 
         //ScoreManagerオブジェクトに付いているScoreManagerスクリプトの情報を取得し、smに入れる
@@ -74,6 +76,9 @@ public class DestroyObject : MonoBehaviour
 
             sm.AddScore(scoreValue);
             Debug.Log(scoreValue);
+
+            gc = GameObject.Find("GameManager").GetComponent<GameClear>();
+            gc.AddDestroyCount(1);
 
             //このスクリプトがついているオブジェクトを破壊する（thisは省略可）
             Destroy(this.gameObject);

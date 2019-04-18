@@ -105,3 +105,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0bf7a58c508834b83b47c10dba4ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectPrefab: {fileID: 100010, guid: 4d0391f078db24fac9f5cba3075f9f5d, type: 3}
+  getSound: {fileID: 8300000, guid: 55491ff386a14884cb0517cc713e1e69, type: 3}

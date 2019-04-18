@@ -9,6 +9,7 @@ TagManager:
   - EnemyShell
   - GreatShell
   - EnemyShotShell
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -26,7 +26,7 @@ public class ShellItem : MonoBehaviour
 
             //アイテムゲット音を出す
             //MainCameraタグが付いているカメラの側で音を発生させる
-            AudioSource.PlayClipAtPoint(getSound, Camera.main.transform.position);
+            AudioSource.PlayClipAtPoint(getSound, transform.position);
 
             //アイテムゲット時にエフェクト発生
             GameObject effect = (GameObject)Instantiate(effectPrefab, transform.position, Quaternion.identity);

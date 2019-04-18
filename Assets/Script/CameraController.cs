@@ -10,10 +10,15 @@ public class CameraController : MonoBehaviour
 
 	// private bool mainCameraON = true;
 
-	// void Start () {
+    public GameObject aimImage;
+
+	 void Start () {
 	// 	mainCamera.enabled = true;
 	// 	subCamera.enabled = false;
-	// }
+
+        //客観カメラの場合、照準器をオフ
+        aimImage.SetActive(false);
+	}
 
     // Update is called once per frame
     void Update()
@@ -35,9 +40,15 @@ public class CameraController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.C) && subCamera){
             mainCamera.enabled = !mainCamera.enabled;
             subCamera.enabled = !subCamera.enabled;
+
+            //主観カメラの場合、照準器オン
+            aimImage.SetActive(true);
         }
         if(tankHealth.tankCamera.enabled == false){
             mainCamera.enabled = true;
+
+            //客観カメラの場合、照準器をオフ
+            aimImage.SetActive(false);
         }
     }
 }
